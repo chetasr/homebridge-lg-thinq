@@ -150,7 +150,7 @@ export class LGThinQHomebridgePlatform implements DynamicPlatformPlugin {
 
         const category = Helper.category(device);
         // create a new accessory
-        const accessory = new this.api.platformAccessory(device.name, device.id, category);
+        const accessory = new this.api.platformAccessory(this.config.devices.find(dev => dev.id === device.id).name || device.name, device.id, category);
         accessory.context.device = device;
 
         lgThinQDevice = new accessoryType(this, accessory);
