@@ -125,6 +125,11 @@
             "description": "if your device supported Air Quality sensor",
             "type": "boolean"
           },
+          "ac_jet_mode_control": {
+            "title": "Enable Jet Mode Control",
+            "description": "if your device supported Jet Mode",
+            "type": "boolean"
+          },
           "ac_mode": {
             "title": "AC Mode (Heating or Cooling or Both)",
             "type": "string",
