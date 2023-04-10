@@ -106,7 +106,7 @@ export default class AirConditioner extends baseDevice {
     }
 
     // more feature
-    if (this.isJetModeEnabled(device)) {
+    if (this.isJetModeEnabled(device) && this.config.ac_jet_mode_control as boolean) {
       this.serviceJetMode = accessory.getService('Jet Mode') || accessory.addService(Switch, 'Jet Mode', 'Jet Mode');
       this.serviceJetMode.updateCharacteristic(platform.Characteristic.Name, 'Jet Mode');
       this.serviceJetMode.getCharacteristic(platform.Characteristic.On)
@@ -139,6 +139,7 @@ export default class AirConditioner extends baseDevice {
       ac_humidity_sensor: false,
       ac_led_control: false,
       ac_fan_control: false,
+      ac_jet_mode_control: true,
       ac_buttons: [],
     }, super.config);
   }
